@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cadastro</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f2f2f2;
+      padding: 20px;
+    }
+    .container {
+      max-width: 400px;
+      margin: 0 auto;
+      background-color: #fff;
+      padding: 20px;
+      border-radius: 5px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+    h2 {
+      margin-top: 0;
+    }
+    label {
+      font-weight: bold;
+    }
+    input[type="text"],
+    input[type="password"] {
+      width: 100%;
+      padding: 10px;
+      margin-bottom: 10px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+    }
+    button {
+      width: 100%;
+      padding: 10px;
+      background-color: #007bff;
+      border: none;
+      border-radius: 5px;
+      color: #fff;
+      cursor: pointer;
+    }
+    button:hover {
+      background-color: #0056b3;
+    }
+    .matricula {
+      margin-top: 10px;
+      font-weight: bold;
+    }
+  </style>
+</head>
+<body>
+
+<div class="container">
+  <h2>Cadastro</h2>
+  <form>
+    <label for="username">Nome:</label>
+    <input type="text" id="username" name="username" required><br>
+
+    <label for="email">Email:</label>
+    <input type="text" id="email" name="email" required><br>
+
+    <label for="password">Senha:</label>
+    <input type="password" id="password" name="password" required><br>
+
+    <label for="confirm-password">Confirmar Senha:</label>
+    <input type="password" id="confirm-password" name="confirm-password" required><br>
+
+    <label for="type">Tipo:</label>
+    <select id="type" name="type">
+      <option value="cliente">Cliente</option>
+      <option value="funcionario">Funcionário</option>
+    </select><br>
+
+    <button onclick="cadastrar()">Cadastrar</button>
+  </form>
+</div>
+
+<script>
+  function cadastrar() {
+    var username = document.getElementById('username').value;
+    var email = document.getElementById('email').value;
+    var password = document.getElementById('password').value;
+    var confirmPassword = document.getElementById('confirm-password').value;
+    var type = document.getElementById('type').value;
+
+    if (password !== confirmPassword) {
+      alert('As senhas não coincidem.');
+      return;
+    }
+
+    console.log('Nome:', username);
+    console.log('Email:', email);
+    console.log('Senha:', password);
+    console.log('Tipo:', type);
+    
+    // Aqui você pode adicionar a lógica para enviar os dados para o backend
+  }
+</script>
+
+</body>
+</html>

@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Adicionar/Alterar Carros</title>
+    <!-- Adicione o link para o CSS do Bootstrap -->
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+
+<div class="container mt-5">
+    <h2>Adicionar/Alterar Carros</h2>
+    <form>
+        <div class="form-row">
+            <div class="form-group col-md-6">
+                <label for="marca">Marca:</label>
+                <input type="text" class="form-control" id="marca" placeholder="Digite a marca">
+            </div>
+            <div class="form-group col-md-6">
+                <label for="modelo">Modelo:</label>
+                <input type="text" class="form-control" id="modelo" placeholder="Digite o modelo">
+            </div>
+        </div>
+        <div class="form-row">
+            <div class="form-group col-md-4">
+                <label for="ano">Ano:</label>
+                <input type="text" class="form-control" id="ano" placeholder="Digite o ano">
+            </div>
+            <div class="form-group col-md-4">
+                <label for="tipo">Tipo:</label>
+                <select id="tipo" class="form-control">
+                    <option selected>Escolha...</option>
+                    <option>Sedan</option>
+                    <option>SUV</option>
+                    <option>Hatchback</option>
+                    <option>Esportivo</option>
+                </select>
+            </div>
+            <div class="form-group col-md-4">
+                <label for="preco">Preço:</label>
+                <input type="text" class="form-control" id="preco" placeholder="Digite o preço">
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="caracteristicas">Características Técnicas:</label>
+            <textarea class="form-control" id="caracteristicas" rows="3" placeholder="Digite as características técnicas"></textarea>
+        </div>
+        <div class="form-group">
+            <label for="foto">Foto:</label>
+            <input type="file" class="form-control-file" id="foto">
+        </div>
+        <button type="submit" class="btn btn-primary">Salvar</button>
+    </form>
+</div>
+
+<!-- Adicione o link para o JavaScript do Bootstrap -->
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>

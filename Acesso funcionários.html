@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Administração de Produtos</title>
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <style>
+    /* Estilos personalizados */
+    body {
+      padding: 20px;
+    }
+  </style>
+</head>
+<body>
+
+<div class="container">
+  <h2 class="text-center">Administração de Produtos</h2>
+
+  <!-- Formulário de Login -->
+  <div id="login-form">
+    <h3 class="text-center">Login</h3>
+    <form>
+      <div class="form-group">
+        <label for="username">Usuário:</label>
+        <input type="text" class="form-control" id="username" placeholder="Digite seu usuário">
+      </div>
+      <div class="form-group">
+        <label for="password">Senha:</label>
+        <input type="password" class="form-control" id="password" placeholder="Digite sua senha">
+      </div>
+      <button type="submit" class="btn btn-primary btn-block">Entrar</button>
+    </form>
+  </div>
+
+  <!-- Formulário de Alteração de Produto -->
+  <div id="product-form" style="display: none;">
+    <h3 class="text-center">Alterar Produto</h3>
+    <form>
+      <div class="form-group">
+        <label for="product-name">Nome do Produto:</label>
+        <input type="text" class="form-control" id="product-name">
+      </div>
+      <div class="form-group">
+        <label for="product-description">Descrição:</label>
+        <textarea class="form-control" id="product-description" rows="3"></textarea>
+      </div>
+      <div class="form-group">
+        <label for="product-price">Preço:</label>
+        <input type="number" class="form-control" id="product-price">
+      </div>
+      <button type="submit" class="btn btn-success btn-block">Salvar Alterações</button>
+    </form>
+  </div>
+</div>
+
+<!-- Bootstrap JS (opcional, apenas para alguns componentes interativos) -->
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+<script>
+  // Função para mostrar/ocultar formulários com base no estado de login
+  function toggleForms(isLoggedIn) {
+    if (isLoggedIn) {
+      document.getElementById('login-form').style.display = 'none';
+      document.getElementById('product-form').style.display = 'block';
+    } else {
+      document.getElementById('login-form').style.display = 'block';
+      document.getElementById('product-form').style.display = 'none';
+    }
+  }
+
+  // Simulação de login bem-sucedido (você precisa substituir isso com a lógica real de login)
+  function login(event) {
+    event.preventDefault(); // Evita o envio do formulário
+
+    var username = document.getElementById('username').value;
+    var password = document.getElementById('password').value;
+
+    // Aqui você deve fazer uma requisição ao backend para autenticar o usuário
+    // Esta é apenas uma simulação
+    if (username === 'admin' && password === 'senha') {
+      toggleForms(true); // Mostrar formulário de alteração de produto
+    } else {
+      alert('Credenciais inválidas');
+    }
+  }
+
+  // Event listener para o envio do formulário de login
+  document.querySelector('#login-form form').addEventListener('submit', login);
+</script>
+
+</body>
+</html>
